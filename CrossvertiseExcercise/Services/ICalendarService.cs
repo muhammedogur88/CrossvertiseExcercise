@@ -8,6 +8,5 @@ namespace CrossvertiseExcercise.Services
         Task<IEnumerable<Appointment>> GetAllAsync();
         Task<IEnumerable<AppointmentListViewModel>> GetAppointmentListByMonthAsync(int month);
         Task<AppointmentDetailViewModel> GetAppointmentDetailAsync(Guid id);
-        Task<Appointment> Create(Appointment appointment);
     }
 }
