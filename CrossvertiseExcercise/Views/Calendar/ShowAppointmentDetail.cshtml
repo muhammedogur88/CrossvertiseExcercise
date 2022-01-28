@@ -1,0 +1,20 @@
+﻿@model CrossvertiseExcercise.ViewModels.AppointmentDetailViewModel
+
+<div>
+    <p>Description: @Model.Subject</p>
+    <p>Date: @Model.Date</p>
+    <p>Organizer: @Model.Organizer</p>
+
+    <p>Attendees:</p>
+    <ul>
+        @if (Model.AppointmentAttendeesName.Count > 0)
+        {
+            foreach (var item in Model.AppointmentAttendeesName)
+            {
+                <li>
+                    <p style="margin-left:0px;">@item</p>
+                </li>
+            }
+        }
+    </ul>
+</div>
