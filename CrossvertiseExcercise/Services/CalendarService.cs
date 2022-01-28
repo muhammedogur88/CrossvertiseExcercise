@@ -39,24 +39,5 @@ namespace CrossvertiseExcercise.Services
 
             return _mapper.Map<AppointmentDetailViewModel>(item);
         }
-
-        public Task<Appointment> Create(Appointment appointment)
-        {
-            appointment.Id = Guid.NewGuid();
-
-            appointment.User.Id = Guid.NewGuid();
-
-            var a = Guid.NewGuid();
-            foreach (var item in appointment.AppointmentAttendees)
-            {
-                item.Id = a;
-                item.User.Id = Guid.NewGuid();
-                item.AppointmentId = appointment.Id;
-            };
-
-            _context.Appointments.AddAsync(appointment);
-
-            return null; ;
-        }
     }
 }
